@@ -107,14 +107,14 @@ def fft(D):
                 X[b][k1] = 0 
                 DFT = 0
                 for n in range(0,(N1-1)+1): #The loop runs for how big N1 is
-                    sr = math.cos(math.radians(2*pi*n*m*k1/N)) #Gets the real number and makes it a cosien
+                    sr = math.cos(math.radians(2*pi*n*m*k1/N)) #Gets the real number and makes it a cos
                     si = math.sin(math.radians((-1)*2*pi*n*m*k1/N))*(1j) #Gets the imaginary number and sets it as a sin
                     w = sr + si #Omega will be in the form cos() + jsin()
                     DFT = DFT + (D[(m*n) + b])*w #Sums up parts. Think of it this is inside a summation
                 X[b][k1] = DFT #Adds the DFT to the X matrix
                 k1 = k1+1
             b = b+1
-        k = 0
+        k = 0 #Counters
         c = 0
         while(k < N):
             FFT = 0
